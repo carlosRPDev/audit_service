@@ -35,7 +35,7 @@ gem "thruster", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 # gem "rack-cors"
 
-gem "mongoid", "~> 8.0"
+gem "mongoid", "~> 9.0"
 gem "httparty"
 gem "sidekiq"
 gem "redis"
