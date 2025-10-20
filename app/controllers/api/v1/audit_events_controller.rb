@@ -26,7 +26,7 @@ module Api
       end
 
       def set_events
-        invoice_id = params[:id]
+        invoice_id = params[:id].to_i
         @events = AuditEvent.where("detail.invoice_id" => invoice_id)
       end
     end
