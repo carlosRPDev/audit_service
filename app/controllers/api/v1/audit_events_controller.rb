@@ -8,15 +8,18 @@ module Api
         safe_params[:detail] ||= {}
 
         event = AuditEvent.create!(safe_params)
-        render json: { message: "Evento registrado", id: event.id }, status: :created
+        render_success(data: event, status: :created)
+      rescue ActiveRecord::RecordInvalid => e
+        render_error(message: "Error al registrar evento: #{e.message}")
       rescue => e
-        render json: { error: e.message }, status: :unprocessable_entity
+        Rails.logger.error("[Audit] Error general: #{e.message}")
+        render_error(message: "Error interno al registrar evento", status: :internal_server_error)
       end
 
       def show
         invoice_id = params[:id].to_i
         @events = AuditEvent.where("detail.invoice_id" => invoice_id).to_a
-        render json: @events, status: :ok
+        render_success(data: @events)
       end
 
       private
