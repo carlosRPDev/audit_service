@@ -146,11 +146,10 @@ GEM
     mongo (2.21.3)
       base64
       bson (>= 4.14.1, < 6.0.0)
-    mongoid (8.1.11)
+    mongoid (9.0.8)
       activemodel (>= 5.1, < 8.1, != 7.0.0)
       concurrent-ruby (>= 1.0.5, < 2.0)
       mongo (>= 2.18.0, < 3.0.0)
-      ruby2_keywords (~> 0.0.5)
     msgpack (1.8.0)
     multi_xml (0.7.2)
       bigdecimal (~> 3.1)
@@ -301,7 +300,6 @@ GEM
       rubocop-performance (>= 1.24)
       rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
-    ruby2_keywords (0.0.5)
     securerandom (0.4.1)
     sidekiq (8.0.8)
       connection_pool (>= 2.5.0)
@@ -380,7 +378,7 @@ DEPENDENCIES
   debug
   httparty
   kamal
-  mongoid (~> 8.0)
+  mongoid (~> 9.0)
   oj
   puma (>= 5.0)
   rails (~> 8.0.3)
